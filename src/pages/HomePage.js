@@ -12,6 +12,7 @@ class HomePage extends React.Component {
         
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.clearList = this.clearList.bind(this);
     }
     render(){
         if (this.state.loggedIn){
@@ -29,7 +30,7 @@ class HomePage extends React.Component {
                             <button type="submit" className="bg-blue-400 rounded-md p-1 ml-3 text-white border-blue-700 border-2 hover:border-red-700 hover:bg-red-200 hover:text-blue-700" onClick={this.handleSubmit}>Add Item</button>
                         </form>
                         <h1 className="text-red-900 font-mono mt-6 text-center font-bold text-2xl">To-Do List Items</h1>
-                        <div className="w-2/3 ml-auto mr-auto bg-blue-200 mt-5 p-5">
+                        <div className="w-2/3 ml-auto mr-auto bg-blue-200 mt-5 p-5 flex justify-center flex-col">
                             
                             {this.state.toDoItems.length > 1 ? this.state.toDoItems.map(item => {
                                 if (item.num >= 1){
@@ -37,6 +38,7 @@ class HomePage extends React.Component {
                                 }
                                 
                             }) : <h1 className="text-red-600 text-center font-bold pt-1 font-mono text-lg">No items in list</h1>}
+                            {this.state.toDoItems.length > 1 ? <button className="bg-blue-400 rounded-md p-1 text-white border-blue-700 border-2 hover:border-red-700 hover:bg-red-200 hover:text-blue-700 mr-auto ml-auto mt-4" type="button" onClick={this.clearList}>Clear List</button>: null}
                         </div>
                         {/*{this.state.toDoItems.map((item) =>{
                             return <ToDoItem toDoItem={item.item} toDoItemNum={item.num}/>
@@ -57,10 +59,17 @@ class HomePage extends React.Component {
         event.preventDefault();
         const num = this.state.toDoItems.length;
         this.setState({
+            item: "",
             toDoItems: [...this.state.toDoItems, {item: this.state.item, num: num}]
         });
         
 
+    }
+    clearList(event){
+        event.preventDefault();
+        this.setState({
+            toDoItems: [{item: "", num: ""}]
+        });
     }
 
 }
