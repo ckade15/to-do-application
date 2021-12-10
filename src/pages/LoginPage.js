@@ -53,7 +53,7 @@ class LoginPage extends React.Component {
       this.setState({
         loggedIn: true
       });
-      this.props.history.push('/');
+      this.props.history.push('/home');
     }else{
       this.setState({
         loginAttempt: true
