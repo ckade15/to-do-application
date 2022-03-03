@@ -7,3 +7,8 @@ Eventually, I would like to implement a database with password hashing for proof
 <p align="center">
     <img src="https://media.giphy.com/media/GfqT6TDX3BXwcEDOQc/giphy.gif" style="height: 500px; width: 800px;"/>
 </p>
+
+### Social Media Links
+Github: [ckade15](https://www.github.com/ckade15) <br>
+LinkedIn: [Christopher Kade](https://www.linkedin.com/in/christopher-kade-b9b2151a5/) <br>
+Twitter: [Christhedev__](https://twitter.com/Christhedev__)
